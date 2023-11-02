@@ -158,6 +158,8 @@ uint32_t Subsumer::subsume0(Clause& ps)
         Clause* tmp = subs[i].clause;
         unlinkClause(subs[i]);
         free(tmp);
+        // Mate from the future -- potential bug.
+        // should be 3 lines above.
         retIndex = subs[i].index;
     }
     
